@@ -61,8 +61,9 @@ and the bias chosen such that the "middle" of the sigmoid falls into the (scaled
 The output values (booleans, encoded as fuzzy 0 and 1) signal if this path of the tree is taken.
 For subsequent neurons, this incoming signal is multiplied onto their output value, such that
 not-taken paths are silenced for further output.
-The final neurons just output a constant tensor (intended result). Adding them all up gives the final result,
-which works because only one path is taken anyway.
+The final "leaf" neurons use linear activation, have a bias of `0`,
+and their initial weight set to the intended output value.
+Since only one of these final neurons gets an input signal, their outputs can be combined by summing them up.
 
 Initializing the neural network this way makes it output (almost) the exact same predictions as the tree does.
 
