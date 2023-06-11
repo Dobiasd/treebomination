@@ -14,7 +14,7 @@ class TestArgsCalls(unittest.TestCase):
 
     def test_foo_function_positional(self) -> None:
         # https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques
-        df_train = pd.read_csv("treebominate/kaggle_house-prices-advanced-regression-techniques_train.csv", header=0)
+        df_train = pd.read_csv("treebomination/kaggle_house-prices-advanced-regression-techniques_train.csv", header=0)
 
         # Only the numerical columns
         columns = [
