@@ -31,7 +31,7 @@ class TestArgsCalls(unittest.TestCase):
         X = df_train[columns].to_numpy()
         Y = df_train[["SalePrice"]].to_numpy().ravel()
 
-        X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=23)
+        X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
 
         tr = DecisionTreeRegressor(max_depth=3)
         tr.fit(X_train, Y_train)
@@ -41,12 +41,14 @@ class TestArgsCalls(unittest.TestCase):
         nn = treebominate(tr, len(columns))
 
         nn.compile(loss='mse', optimizer='nadam')
-        tf.keras.utils.plot_model(
-            nn, to_file='model.png',
-            show_shapes=False, show_dtype=False, show_layer_names=False,
-            rankdir='LR', expand_nested=True, dpi=96,
-            layer_range=None, show_layer_activations=False, show_trainable=False
-        )
+
+        if False:
+            tf.keras.utils.plot_model(
+                nn, to_file='model.png',
+                show_shapes=True, show_dtype=False, show_layer_names=False,
+                rankdir='LR', expand_nested=True, dpi=96,
+                layer_range=None, show_layer_activations=True, show_trainable=False
+            )
 
         def eval_tr():
             tr_test_pred = tr.predict(X_test)
