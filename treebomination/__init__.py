@@ -1,3 +1,4 @@
+from ._conversion import tree_input_to_nn_input as tree_input_to_nn_input
 from ._conversion import treebominate as treebominate
 
 name = "treebomination"
