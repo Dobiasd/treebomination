@@ -43,3 +43,7 @@ From some unbridled thoughts:
 - A neuron in an artificial neural network acts can act as a single logistic regression node.
 
 The following idea arose: There should be a morphism from binary decision trees to neural networks, it should™️ be possible to emulate every decision tree with a neural network, i.e., derive the network architecture from the tree and initialize the weights and biases such that the output of the network is similar to the output of the tree.
+
+## Details about the structure of the generated neural networks
+
+TODO
