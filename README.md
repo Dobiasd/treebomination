@@ -22,7 +22,7 @@ Treebomination is a way to convert a `sklearn.tree.DecisionTreeRegressor` into a
 - You care about the precision of your results.
 - You care about the size of your final application.
 
-So, **I highly recommend not actually using this for anything serious**.
+So, **it is highly recommended to not actually use this for anything serious**.
 
 ## Usage
 
