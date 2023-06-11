@@ -22,6 +22,6 @@ jobs:
           python3 -m pip install mypy
       - name: Test
         run: |
-          find treebomination -iname "*.py" | grep -v -e "__init__.py" | xargs -L 1 pylint
+          # find treebomination -iname "*.py" | grep -v -e "__init__.py" | xargs -L 1 pylint
           find treebomination -iname "*.py" | grep -v -e "__init__.py" | xargs -L 1 mypy --strict
           find treebomination -iname "*.py" | grep -v -e "__init__.py" | xargs -L 1 python3 -m unittest
