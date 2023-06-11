@@ -50,11 +50,11 @@ class TestArgsCalls(unittest.TestCase):
                 layer_range=None, show_layer_activations=True, show_trainable=False
             )
 
-        def eval_tr():
+        def eval_tr() -> None:
             tr_test_pred = tr.predict(X_test)
             print("tree score:", r2_score(Y_test, tr_test_pred))
 
-        def eval_nn():
+        def eval_nn() -> None:
             nn_test_pred = np.squeeze(nn(tree_input_to_nn_input(X_test)).numpy())
             print("nn score:", r2_score(Y_test, nn_test_pred))
 
