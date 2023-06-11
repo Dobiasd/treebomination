@@ -1,0 +1,28 @@
+name: ci
+
+on: [workflow_dispatch, push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: [ "3.7", "3.8", "3.9", "3.10", "3.11" ]
+    name: python-${{ matrix.python }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+      - name: Setup python-${{ matrix.python }}
+        uses: actions/setup-python@main
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install Tools
+        run: |
+          python3 -m pip install pylint
+          python3 -m pip install mypy
+          python3 -m pip install .
+      - name: Test
+        run: |
+          find treebomination -iname "*.py" | grep -v -e "__init__.py" | xargs -L 1 pylint
+          find treebomination -iname "*.py" | grep -v -e "__init__.py" | xargs -L 1 mypy --strict
+          find treebomination -iname "*.py" | grep -v -e "__init__.py" | xargs -L 1 python3 -m unittest
