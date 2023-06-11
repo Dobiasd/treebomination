@@ -7,6 +7,7 @@ import numpy as np
 import sklearn.tree._tree as sklearn_tree_impl
 import tensorflow as tf
 from keras.engine.keras_tensor import KerasTensor
+from sklearn.tree import DecisionTreeRegressor
 
 
 @dataclass
@@ -122,7 +123,7 @@ def simple_tree_as_neural_network(
     return tf.keras.Model(inputs=inputs, outputs=outputs)
 
 
-def treebominate(tr: sklearn_tree_impl, num_input_features: int) -> tf.keras.Model:
+def treebominate(tr: DecisionTreeRegressor, num_input_features: int) -> tf.keras.Model:
     simple_tree = convert_tree_to_simple_tree(tr.tree_)
     return simple_tree_as_neural_network(simple_tree, num_input_features)
 

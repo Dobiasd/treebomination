@@ -38,7 +38,7 @@ class TestArgsCalls(unittest.TestCase):
 
         print(export_text(tr))
 
-        nn = treebominate(tr.tree_, len(columns))
+        nn = treebominate(tr, len(columns))
 
         nn.compile(loss='mse', optimizer='nadam')
         tf.keras.utils.plot_model(
