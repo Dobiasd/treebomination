@@ -81,7 +81,6 @@ results in a ridiculously complex neural-network architecture.
 
 In reality, trees are often much deeper than that, which not only results in a very large (and slow) model, but also the precision of the results suffers.
 
-But hey, at least in this toy example (see [tests](treebomination/tests.py))
-(trained on the numerical features from the [Kaggle competition "House Prices - Advanced Regression Techniques"](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques))
+But hey, at least in this toy example (trained on the numerical features from the [Kaggle competition "House Prices - Advanced Regression Techniques"](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques), see [tests](treebomination/tests.py))
 the R2 score of the NN tree (`0.692`), is slightly higher than the one of the tree (`0.690`).
 With a quick re-training on the same data, it even improves a bit more (to `0.694`). 🎉
