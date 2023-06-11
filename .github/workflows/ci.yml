@@ -18,7 +18,7 @@ jobs:
           python-version: ${{ matrix.python }}
       - name: Install Tools
         run: |
-          python3 -m -r requirements.txt
+          python3 -m pip install -r requirements.txt
       - name: Test
         run: |
           # find treebomination -iname "*.py" | grep -v -e "__init__.py" | xargs -L 1 pylint
