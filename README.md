@@ -1,4 +1,4 @@
-![logo](treebomination.jpg)
+![logo](images/treebomination_logo.jpg)
 
 [![CI](https://github.com/Dobiasd/treebomination/workflows/ci/badge.svg)](https://github.com/Dobiasd/treebomination/actions)
 [![(License MIT 1.0)](https://img.shields.io/badge/license-MIT%201.0-blue.svg)][license]
@@ -50,8 +50,17 @@ From some unbridled thoughts:
 - A Decision tree is a fancy way of having nested `if` statements.
 - A simple logistic regression on a one-dimensional input acts like a fuzzy threshold (or an `if` statement).
 - A neuron in an artificial neural network acts can act as a single logistic regression node.
+- A sigmoid (activation function) with a steeper slope ("edginess") acts like a less-fuzzy threshold:
 
-The following idea arose: There should be a morphism from binary decision trees to neural networks,
+`edginess = 1`:
+
+![smooth_sigmoid](images/smooth_sigmoid.png)
+
+`edginess = 10`:
+
+![steep_sigmoid](images/steep_sigmoid.png)
+
+So the following idea arose: There should be a morphism from binary decision trees to neural networks,
 it should™️ be possible to emulate every decision tree with a neural network,
 i.e., derive the network architecture from the tree and initialize the weights and biases
 such that the output of the network is similar to the output of the tree.
@@ -111,7 +120,7 @@ A `DecisionTreeRegressor` with a higher `max_depth` (`3` in the case below) like
 
 results in a ridiculously complex neural-network architecture.
 
-![model](model.png)
+![model](images/model.png)
 
 In reality, trees are often much deeper than that, which not only results in a very large (and slow) model,
 but also the precision of the results suffers.
