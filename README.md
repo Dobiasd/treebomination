@@ -118,7 +118,7 @@ A `DecisionTreeRegressor` with a higher `max_depth` (`3` in the case below) like
 |   |   |   |--- value: [745000.00]
 ```
 
-results in a ridiculously complex neural-network architecture.
+results in a ridiculously complex abomination of a neural-network architecture.
 
 ![model](images/model.png)
 
