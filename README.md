@@ -69,7 +69,15 @@ Since only one of these final neurons gets an input signal, their outputs can be
 
 Initializing the neural network this way makes it output (almost) the exact same predictions as the tree does.
 
-Even a very simple (`max_depth=3`) `DecisionTreeRegressor` like the following:
+So a simple three like this
+
+![simple_tree](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuU82ixWoqnGqqb8JIqgBKXLiR1LACefIYpFoSr8qWSpKF2u51Qkon9pIr7X3Qo0xgIWrCPihDQSu5I5XX2IHbvAPniNb0AI1DW00)
+
+results in the following NN: 
+
+![simple_nn](http://www.plantuml.com/plantuml/png/XP91QyGW48Nl_eevBmHYZeMM_H-bYDsCYJ3HHSTjUzdVNWd1RbngBZdulkURpFCSMGTE2mb2my0UWfrcXj46lB3rJWY3cbD0U07hhec5TyeRewATdAPyUk_11xZB9q5c0_2i6IuweX0ZkeZAHaKOeyg2ov-0SVOqPlmBr-HNw6H_n7vQ7JCfUpX1ENz8c09gnj08aNs3hcAwEcT9nFPAFuhGSEQywxmniFsvyG4SVZCGtf3-u7MpH_GsrKrJGYKV9-uhgOot7Uojm__MeROEGhoVFg3htc3NOUb-bLgLL61ph-s7iDwmss_rhfxreoABfRJGk7C3gevNOhV-kjOQ68GuenlJGhy0)
+
+A `DecisionTreeRegressor` with a higher `max_depth` (`3` in the case below) like the following:
 
 ```
 |--- feature_3 <= 7.50
