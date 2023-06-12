@@ -13,7 +13,7 @@ Treebomination is a way to convert a `sklearn.tree.DecisionTreeRegressor` into a
 
 ## When is this helpful?
 
-- You irrationally dislike decision trees and feel neural networks are much cooler. 🤪
+- You irrationally dislike decision trees (e.g., for their stepwise behavior) and feel neural networks (with their smoothness) are much cooler. 🤪
 - You want to prove a point about neural networks. 👨‍🏫
 - You think that converting the tree to a NN and then fine-tuning it might decrease the value of your less metric on your test set. 🪄
 - You have a well-working decision tree but want to only use TensorFlow or [frugally-deep](https://github.com/Dobiasd/frugally-deep) in production. 💾
