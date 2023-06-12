@@ -64,31 +64,31 @@ def show_simple_tree_as_python_code(simple_tree: Union[SimpleTree, SimpleLeaf], 
     return f"{indent}if x_{simple_tree.input_index} <= {threshold}:\n{left}\n{indent}else:\n{right}"
 
 
-def make_leaf_layer(value: float) -> tf.keras.layers.Layer:
+def make_leaf(on_off_signal: KerasTensor, value: float) -> KerasTensor:
     return tf.keras.layers.Dense(
         1,
         "linear",
         kernel_initializer=tf.keras.initializers.Constant(value),
         bias_initializer=tf.keras.initializers.Constant(0.0)
-    )
+    )(on_off_signal)
 
 
-def make_switch_layer_left(switched_input: KerasTensor, threshold: float, edginess: float) -> KerasTensor:
+def make_switch_layer_left(on_off_signal: KerasTensor, threshold: float, edginess: float) -> KerasTensor:
     """return fuzzy 1 if x < threshold"""
     return tf.keras.layers.Dense(
         1, "sigmoid",
         kernel_initializer=tf.keras.initializers.Constant(-edginess),
         bias_initializer=tf.keras.initializers.Constant(threshold * edginess)
-    )(switched_input)
+    )(on_off_signal)
 
 
-def make_switch_layer_right(switched_input: KerasTensor, threshold: float, edginess: float) -> KerasTensor:
+def make_switch_layer_right(on_off_signal: KerasTensor, threshold: float, edginess: float) -> KerasTensor:
     """return fuzzy 1 if x > threshold"""
     return tf.keras.layers.Dense(
         1, "sigmoid",
         kernel_initializer=tf.keras.initializers.Constant(edginess),
         bias_initializer=tf.keras.initializers.Constant(-threshold * edginess)
-    )(switched_input)
+    )(on_off_signal)
 
 
 def simple_tree_as_neural_network_impl(
@@ -98,7 +98,7 @@ def simple_tree_as_neural_network_impl(
         edginess: float
 ) -> List[KerasTensor]:
     if isinstance(node, SimpleLeaf):
-        return [make_leaf_layer(node.value)(on_off_signal)]
+        return [make_leaf(on_off_signal, node.value)]
     left_on_off = tf.keras.layers.Multiply()([
         on_off_signal,
         make_switch_layer_left(inputs[node.input_index], node.threshold, edginess)])
