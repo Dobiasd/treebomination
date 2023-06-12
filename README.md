@@ -27,6 +27,11 @@ Treebomination is a way to convert a `sklearn.tree.DecisionTreeRegressor` into a
 
 So, **it is highly recommended to not actually use this for anything serious**.
 
+If you seriously consider replacing trees with NNs, I recommend having a look at the following projects instead:
+- https://github.com/charliec443/TreeGrad
+- https://github.com/microsoft/hummingbird
+- https://github.com/tensorflow/decision-forests
+
 ## Usage
 
 ```bash
