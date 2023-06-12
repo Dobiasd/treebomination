@@ -5,11 +5,11 @@
 
 [license]: LICENSE
 
+**Disclaimer: This is just a fun experiment, I conducted for my own curiosity and entertainment. It's not intended to be useful for anything else.**
+
 # treebomination
 
 Treebomination is a way to convert a `sklearn.tree.DecisionTreeRegressor` into a (roughly) equivalent `tf.keras.Model`.
-
-**Disclaimer: This is just a fun experiment, I conducted for my own curiosity and entertainment. It's not intended to be useful for anything else.**
 
 ## When is this helpful?
 
