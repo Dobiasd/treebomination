@@ -13,7 +13,7 @@ Treebomination is a way to convert a `sklearn.tree.DecisionTreeRegressor` into a
 
 ## When is this helpful?
 
-- Never! (Except for having some fun, maybe.)
+- Almost never!
 - You irrationally dislike decision trees (e.g., for their stepwise behavior) and feel neural networks (with their smoothness) are much cooler. 🤪
 - You want to prove a point about neural networks. 👨‍🏫
 - You think that converting the tree to a NN and then fine-tuning it might decrease the value of your loss metric on your test set. 🪄
@@ -22,7 +22,7 @@ Treebomination is a way to convert a `sklearn.tree.DecisionTreeRegressor` into a
 
 ## When is this not useful?
 
-- Always!
+- Almost always!
 - You care about the performance of your predictions. 🐌
 - You care about the precision of your results. 🏹
 - You care about the size of your final application. 🦏
